@@ -35,13 +35,7 @@ export default function WinningTeamMeter({ cellStates }: { cellStates: CellState
         <label id="WinningTeamLabel" htmlFor="GridPercentControlledMeter">
             {winningTeamLabelText}
         </label>
-        {/* TODO:
-        The percents should be replaced with computed values.
-        The meter is number of green cells divided by number of green and purple cells.
-        The green label is this too.
-        The purple label is number of purple cells divided by number of green and purple cells.
-        Don't forget that there are multiple states that each color can be in.
-        */}
+
         <meter id="GridPercentControlledMeter"></meter>
         <label id="GreenPercentLabel" htmlFor="GridPercentControlledMeter">Green: {(numGreenCells/cellStates.length) * 100}%</label>
         <label id="PurplePercentLabel" htmlFor="GridPercentControlledMeter">Purple: {(numPurpleCells/cellStates.length) * 100}%</label>
