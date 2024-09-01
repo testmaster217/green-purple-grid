@@ -1,9 +1,11 @@
 import { CellState } from "../cellStates";
+import "../styles.css";
 
 export default function GameGrid({ cellStates }: { cellStates: CellState[] }) {
     const gridCells: React.ReactElement[] = [];
-    let currentCellClasses = "GridCell ";
-    cellStates.forEach((cellState) => {
+    let currentCellClasses = "";
+    cellStates.forEach((cellState, index) => {
+        currentCellClasses = "GridCell ";
         switch (cellState) {
             case CellState.CLEAR:
                 currentCellClasses += "GridCell_Clear";
@@ -34,7 +36,7 @@ export default function GameGrid({ cellStates }: { cellStates: CellState[] }) {
                 break;
         }
 
-        gridCells.push(<div className={currentCellClasses}></div>);
+        gridCells.push(<div key={index} className={currentCellClasses}></div>);
     });
     
     return <div id="CellGrid">

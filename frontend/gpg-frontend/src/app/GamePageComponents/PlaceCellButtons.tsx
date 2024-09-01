@@ -16,7 +16,7 @@ export default function PlaceCellButtons({
         focusedCellState == CellState.HARD_PURPLE ||
         focusedCellState == CellState.HARD_OFF_GREEN ||
         focusedCellState == CellState.HARD_OFF_PURPLE) {
-        buttons.push(<div className="InvalidPlaceCellButtonBig">Can't place on hard cells.</div>);
+        buttons.push(<div key="InvalidPlaceCellBtn" className="InvalidPlaceCellButtonBig">Can't place on hard cells.</div>);
     }
     // Is the cell a color other than the player's? If so, both buttons say "Place".
     else if (
@@ -34,24 +34,24 @@ export default function PlaceCellButtons({
             )
         )
     ) {
-        buttons.push(<button type="button" className="PlaceOnCellButton">Place On Cell</button>);
-        buttons.push(<button type="button" className="PlaceOffCellButton">Place Off Cell</button>);
+        buttons.push(<button key="PlaceOnCellBtn" type="button" className="PlaceOnCellButton">Place On Cell</button>);
+        buttons.push(<button key="PlaceOffCellBtn" type="button" className="PlaceOffCellButton">Place Off Cell</button>);
     }
     // The cell is the player's color, so is it an on cell? If so, that button says "Remove".
     else if (
         (playerTeam == PlayerTeam.GREEN && focusedCellState == CellState.GREEN) ||
         (playerTeam == PlayerTeam.PURPLE && focusedCellState == CellState.PURPLE)
     ) {
-        buttons.push(<button type="button" className="PlaceOnCellButton">Remove On Cell</button>);
-        buttons.push(<button type="button" className="PlaceOffCellButton">Place Off Cell</button>);
+        buttons.push(<button key="PlaceOnCellBtn" type="button" className="PlaceOnCellButton">Remove On Cell</button>);
+        buttons.push(<button key="PlaceOffCellBtn" type="button" className="PlaceOffCellButton">Place Off Cell</button>);
     }
     // The cell is the player's color and is an off cell, so _that_ button says "Remove".
     else if (
         (playerTeam == PlayerTeam.GREEN && focusedCellState == CellState.OFF_GREEN) ||
         (playerTeam == PlayerTeam.PURPLE && focusedCellState == CellState.OFF_PURPLE)
     ) {
-        buttons.push(<button type="button" className="PlaceOnCellButton">Place On Cell</button>);
-        buttons.push(<button type="button" className="PlaceOffCellButton">Remove Off Cell</button>);
+        buttons.push(<button key="PlaceOnCellBtn" type="button" className="PlaceOnCellButton">Place On Cell</button>);
+        buttons.push(<button key="PlaceOffCellBtn" type="button" className="PlaceOffCellButton">Remove Off Cell</button>);
     }
 
     // Return the buttons in a fragment.

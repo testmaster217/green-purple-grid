@@ -18,7 +18,7 @@ export default function GameScreen({
     cascaded: boolean,
     playerTeam: PlayerTeam
 }) {
-    return <div>
+    return <div id="GameScreen">
         <GameGrid cellStates={cellStates}/>
         <FocusedCellIndicator changedByPlayer={changedByPlayer} cascaded={cascaded}/>
         <ZoomButtons/>

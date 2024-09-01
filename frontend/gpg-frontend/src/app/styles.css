@@ -1,0 +1,119 @@
+:root {
+    --green-team-color: LimeGreen;
+    --purple-team-color: Violet;
+    --neutral-team-color: SkyBlue;
+    --green-team-off-color: rgba(50, 205, 50, 0.5);
+    --purple-team-off-color: rgba(238, 130, 238, 0.5);
+    --green-team-hard-color: Green;
+    --purple-team-hard-color: DarkViolet;
+    --green-team-hard-off-color: rgba(0, 128, 0, 0.5);
+    --purple-team-hard-off-color: rgba(148, 0, 211, 0.5);
+  }
+  
+  /* The page itself */
+  html, body {
+    background-color: white; /* TODO: Change to support dark mode as well as light. */
+  }
+  
+  /* WinningTeamMeter.tsx */
+  .WinningTeamLabelGreen {
+    color: var(--green-team-color)
+  }
+  
+  .WinningTeamLabelPurple {
+    color: var(--purple-team-color);
+  }
+  
+  .WinningTeamLabelTie {
+    color: var(--neutral-team-color);
+  }
+  
+  /* GameGrid.tsx */
+  #CellGrid {
+    --zoom-factor: 1;
+    display: grid;
+  }
+  
+  /* TODO: Change the width and height to be based on the zoom factor when the zoom system is added. */
+  .GridCell {
+    width: 1vw;
+    height: 1vw;
+  }
+  
+  .GridCell_Clear {
+    background-color: transparent;
+    border-radius: 1em;
+  }
+  
+  .GridCell_Green {
+    background-color: var(--green-team-color);
+    border-radius: 1em;
+  }
+  
+  .GridCell_Purple {
+    background-color: var(--purple-team-color);
+    border-radius: 1em;
+  }
+  
+  .GridCell_OffGreen {
+    background-color: var(--green-team-off-color);
+    border-color: var(--green-team-color);
+    border-radius: 1em;
+    border-width: 1em;
+  }
+  
+  .GridCell_OffPurple {
+    background-color: var(--purple-team-off-color);
+    border-color: var(--purple-team-color);
+    border-radius: 1em;
+    border-width: 1em;
+  }
+  
+  .GridCell_HardGreen {
+    background-color: var(--green-team-hard-color);
+    border-radius: 0;
+  }
+  
+  .GridCell_HardPurple {
+    background-color: var(--purple-team-hard-color);
+    border-radius: 0;
+  }
+  
+  .GridCell_HardOffGreen {
+    background-color: var(--green-team-hard-off-color);
+    border-color: var(--green-team-hard-color);
+    border-radius: 0;
+    border-width: 1em;
+  }
+  
+  .GridCell_HardOffPurple {
+    background-color: var(--green-team-hard-off-color);
+    border-color: var(--green-team-hard-color);
+    border-radius: 0;
+    border-width: 1em;
+  }
+  
+  /* PlaceCellButtons.tsx */
+  .InvalidPlaceCellButtonBig {
+    background-color: slategray;
+    color: red;
+    border-radius: 10px;
+  }
+  
+  .PlaceOnCellButton {
+    background-color: blue;
+    color: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .PlaceOffCellButton {
+    background-color: blue;
+    color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
